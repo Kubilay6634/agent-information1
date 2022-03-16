@@ -2,10 +2,10 @@ pipeline { agent any
 
 stages {
 
-stage("build"){
+stage("cloning git agent repository"){
         steps{
-          echo 'Building Application'
-          
+              sh 'git remote set-url origin git@github.com:Kubilay6634/agent-information1.git'
+              git branch: 'main', credentialsId: 'forjenkins', url: 'https://github.com/Kubilay6634/agent-information1'
           }
 }
         
