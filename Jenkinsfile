@@ -8,8 +8,16 @@ stage("build"){
           
           }
 }
+        
 
+stage("invoke"){
+        steps{
+          build job: 'java-html-builder'
+          
+          }
+}
 
+        
 stage("test"){
         steps{
           echo 'Testing Application'
